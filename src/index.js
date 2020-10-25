@@ -5,8 +5,7 @@ module.exports = function check(str, bracketsConfig) {
     const bracket = strArr[i];
 
     for (let j = 0; j < bracketsConfig.length; j += 1) {
-      if (bracket === bracketsConfig[j][0]
-          && bracketsConfig[j][0] === bracketsConfig[j][1]) {
+      if (bracket === bracketsConfig[j][0] && bracketsConfig[j][0] === bracketsConfig[j][1]) {
             if (bracket === temp.slice(-1)[0]) {
               temp = temp.slice(0, -1);
             } else {
@@ -18,9 +17,7 @@ module.exports = function check(str, bracketsConfig) {
         temp = [...temp, bracket];
       }
 
-      if (bracket === bracketsConfig[j][1]
-          && temp.slice(-1)[0] === bracketsConfig[j][0]
-          && temp.length > 0) {
+      if (bracket === bracketsConfig[j][1] && temp.slice(-1)[0] === bracketsConfig[j][0] && temp.length > 0) {
         temp = temp.slice(0, -1);
       } else if (bracket === bracketsConfig[j][1]) {
           if (bracketsConfig[j][1] === bracketsConfig[j][0]) {
